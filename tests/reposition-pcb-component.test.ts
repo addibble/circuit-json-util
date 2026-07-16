@@ -8,7 +8,6 @@ const makeSoup = (): AnyCircuitElement[] => [
     pcb_component_id: "pc1",
     source_component_id: "sc1",
     center: { x: 0, y: 0 },
-    anchor_position: { x: -1, y: 0.5 },
     layer: "top",
     rotation: 0,
     width: 2,
@@ -62,7 +61,6 @@ test("repositionPcbComponentTo moves component and children", () => {
   const trace = soup.find((e) => e.type === "pcb_trace") as any
 
   expect(comp.center).toEqual({ x: 10, y: 5 })
-  expect(comp.anchor_position).toEqual({ x: 9, y: 5.5 })
   expect(port.x).toBe(10)
   expect(port.y).toBe(5)
   expect(pad.x).toBe(10)
